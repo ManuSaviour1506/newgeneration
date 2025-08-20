@@ -1,102 +1,18 @@
-# --------------------------------------------------------------------------
-# A comprehensive .gitignore for typical web development projects
-# --------------------------------------------------------------------------
+# Node modules
+/node_modules
 
-# Dependency and Build Folders
-# --------------------------------------------------------------------------
-# Node.js modules
-node_modules/
+# Vite/Webpack build output
+/dist
+/build
 
-# Production builds and distribution folders
-build/
-dist/
-out/
-.next/ # Next.js
-.nuxt/  # Nuxt.js
-.svelte-kit/ # SvelteKit
-storybook-static/ # Storybook
-public/build/ # Laravel mix, etc.
-
-# Framework-specific caches
-.cache/
-.parcel-cache/
-.vite/ # Vite
-.turbo/ # Turborepo
-
-# Logs and Lockfiles
-# --------------------------------------------------------------------------
 # Log files
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-lerna-debug.log*
 
-# Lockfiles (usually kept, but sometimes ignored in complex setups)
-# yarn.lock
-# package-lock.json
-# pnpm-lock.yaml
-
-# Environment Files
-# --------------------------------------------------------------------------
-# Local environment variables
+# OS and editor files
+.DS_Store
 .env
 .env.local
-.env.development.local
-.env.test.local
-.env.production.local
-.env.*.local
-
-# IDE and OS Files
-# --------------------------------------------------------------------------
-# macOS
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Linux
-*.swp
-
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-
-# IDE-specific directories and files
-.vscode/ # VS Code
-.idea/ # WebStorm / IntelliJ
-*.swp # Vim swap files
-*.iml # IntelliJ module files
-.history/ # VS Code local history
-
-# Testing and Coverage
-# --------------------------------------------------------------------------
-# Test coverage reports
-coverage/
-*.lcov
-.nyc_output/
-.jest/
-
-# Uploads and Temporary Files
-# --------------------------------------------------------------------------
-# User-uploaded files (often stored in a specific directory)
-uploads/
-tmp/
-temp/
-
-# Editor temporary files
-*~
-*.bak
-*.tmp
-
-# Other
-# --------------------------------------------------------------------------
-# Any other miscellaneous files you don't want to commit
-*.zip
-*.rar
-*.7z
-.envrc
-
-# SSH keys or other sensitive files if present in the project root
-# id_rsa
-# mykey.pem
+.vscode/

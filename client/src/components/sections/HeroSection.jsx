@@ -1,36 +1,74 @@
-import React from 'react';
-import { Link as ScrollLink } from 'react-scroll';
+import React from "react";
 
 function HeroSection() {
-  // Replace this with your school's actual hero image URL
-  const heroImageUrl = 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=1932&auto=format&fit=crop';
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById("about");
+    if (aboutSection) {
+      window.scrollTo({
+        top: aboutSection.offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const heroImageUrl =
+    "https://res.cloudinary.com/dlexfctt4/image/upload/v1755700385/Untitled_design_2_htt3gz.png";
 
   return (
-    <section 
-      id="home" 
-      className="relative h-screen flex items-center justify-center text-white"
-      style={{ backgroundImage: `url(${heroImageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center font-inter text-white overflow-hidden pt-48"
+      style={{
+        backgroundImage: `url(${heroImageUrl})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
     >
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black opacity-50"></div>
-      
-      <div className="relative z-10 text-center px-4">
-        <h1 className="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-md">
-          Welcome to Springfield Public School
-        </h1>
-        <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto drop-shadow-sm">
-          Nurturing young minds for a brighter future through excellence in education.
-        </p>
-        <ScrollLink
-          to="about"
-          smooth={true}
-          duration={500}
-          offset={-70}
-          className="bg-blue-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-blue-700 transition duration-300 cursor-pointer"
-        >
-          Learn More
-        </ScrollLink>
+      <div className="absolute inset-0 z-0 bg-black opacity-50"></div>
+
+      <div className="relative z-20 flex flex-col items-center justify-center w-full px-8 py-16 md:py-32 text-center">
+        <div className="mb-8 md:mb-0">
+          <h2 className="text-4xl md:text-6xl font-extrabold drop-shadow-lg font-inter text-white">
+            New Generation
+          </h2>
+        </div>
+
+        <div className="max-w-4xl">
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-4 drop-shadow-lg font-bubblegum text-yellow-300 transform -skew-y-3 md:hover:skew-y-0 transition-transform duration-300">
+            Welcome to Our School!
+          </h1>
+          <p className="text-lg md:text-2xl mb-8 mx-auto drop-shadow-sm font-semibold">
+            A place where every day is a new adventure in learning, creativity,
+            and fun!
+          </p>
+          <button
+            onClick={scrollToAbout}
+            className="inline-block bg-cyan-400 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-cyan-600 transition duration-500 cursor-pointer shadow-lg animate-jiggle"
+          >
+            Explore Our World!
+          </button>
+        </div>
       </div>
+
+      <style>
+        {`
+          @import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Inter:wght@400;600;700;800&display=swap');
+          .font-bubblegum {
+            font-family: 'Bubblegum Sans', cursive;
+          }
+          .font-inter {
+            font-family: 'Inter', sans-serif;
+          }
+
+          @keyframes jiggle {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+            }
+          .animate-jiggle {
+            animation: jiggle 2s ease-in-out infinite;
+          }
+        `}
+      </style>
     </section>
   );
 }

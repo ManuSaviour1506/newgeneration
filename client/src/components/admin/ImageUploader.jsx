@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { IKContext, IKUpload } from 'imagekitio-react';
 import axios from 'axios';
 
-// This authenticator function remains the same
+// Function to authenticate with ImageKit by fetching a token from the backend.
 const authenticator = async () => {
   try {
     const user = JSON.parse(localStorage.getItem('user'));
@@ -22,16 +22,16 @@ const authenticator = async () => {
 };
 
 function ImageUploader({ onSuccess }) {
-  // State to track the upload progress for user feedback
-  const [status, setStatus] = useState('idle'); // idle, uploading, success, error
+  const [status, setStatus] = useState('idle'); // Tracks the upload status.
 
   const handleUploadStart = () => {
     setStatus('uploading');
   };
 
+  // Called on successful upload. The result (res) contains the image URL.
   const handleSuccess = (res) => {
     setStatus('success');
-    onSuccess(res); // Pass the successful result to the parent component
+    onSuccess(res); // Passes the full response to the parent component.
   };
 
   const handleError = (err) => {
@@ -47,16 +47,15 @@ function ImageUploader({ onSuccess }) {
         authenticator={authenticator}
       >
         <IKUpload
-          fileName="school-event.jpg"
+          fileName="school-news-image.jpg"
           onUploadStart={handleUploadStart}
           onSuccess={handleSuccess}
           onError={handleError}
-          // Style the default file input button
           className="file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
         />
       </IKContext>
 
-      {/* Display a helpful status message to the user */}
+      {/* Displays a status message to the user. */}
       <div className="mt-2 text-sm">
         {status === 'uploading' && <p className="text-gray-500">Uploading, please wait...</p>}
         {status === 'success' && <p className="text-green-600 font-semibold">✔ Upload successful!</p>}
