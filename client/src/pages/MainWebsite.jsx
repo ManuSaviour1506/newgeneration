@@ -16,16 +16,17 @@ function MainWebsite() {
       <main>
         <HeroSection />
         <AboutSection />
-        <ContactSection />
-
+      
         <EventsSection />
         <NewsSection />
         <GallerySection />
+         <ContactSection />
         <AdmissionsSection />
       </main>
       <Footer />
     </div>
   );
 }
+
 
 export default MainWebsite;
