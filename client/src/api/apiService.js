@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = "https://newgeneration-an1t.onrender.com/api/";
+const API_URL = "https://newgeneration-production.up.railway.app/api/";
 
 // --- Helper Functions ---
 
@@ -223,4 +223,5 @@ export const updateAdmissionStatus = async (id, status) => {
     throw error.response?.data || new Error('Failed to update admission status');
   }
 };
+
 
