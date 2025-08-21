@@ -34,12 +34,9 @@ app.use("/api/gallery", require("./routes/galleryRoutes"));
 app.use("/api/admissions", require("./routes/admissionRoutes"));
 app.use("/api/imagekit-auth", require("./routes/imagekitRoutes"));
 app.use("/api/contact", require("./routes/contactRoutes"));
-<<<<<<< HEAD
 
-=======
 app.use("/api/staff", require("./routes/staffRoutes"));
 app.use("/api/field-trips", require("./routes/fieldTripRoutes")); // Corrected: changed "fieldtrips" to "field-trips"
->>>>>>> 7ff613b (final deploy)
 // A simple test route to make sure the API is running
 app.get("/", (req, res) => {
   res.send("School Website API is running successfully...");
