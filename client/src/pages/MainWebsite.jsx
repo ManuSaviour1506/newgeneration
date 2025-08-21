@@ -22,7 +22,7 @@ function MainWebsite() {
         <EventsSection />
 
         <GallerySection />
-        <ContactSection />
+        
         {/* Remove FieldTripsSection and StaffSection from here */}
         <AdmissionsSection />
         <ContactSection />
@@ -34,3 +34,4 @@ function MainWebsite() {
 
 
 export default MainWebsite;
+
