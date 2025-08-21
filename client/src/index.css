@@ -8,3 +8,22 @@
 html {
   scroll-behavior: smooth;
 }
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* This targets the scrollbar track (the part the handle slides in) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* This targets the scrollbar handle (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: #008080; /* Teal color */
+  border-radius: 10px;
+}
+
+/* This changes the handle's color on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #006666; /* A darker teal */
+}
