@@ -1,26 +1,22 @@
 const mongoose = require('mongoose');
 
-const contactSchema = new mongoose.Schema({
+const staffSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
   },
-  email: {
+  designation: {
     type: String,
     required: true,
   },
-  subject: {
+  imageUrl: {
     type: String,
     required: true,
   },
-  message: {
+  fileId: { // From ImageKit, for deletion
     type: String,
     required: true,
   },
-  isRead: {
-    type: Boolean,
-    default: false,
-  }
 }, { timestamps: true });
 
-module.exports = mongoose.model("Contact", contactSchema);
+module.exports = mongoose.model('Staff', staffSchema);

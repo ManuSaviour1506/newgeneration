@@ -14,7 +14,7 @@ function AdminDashboard() {
   return (
     <div className="min-h-screen bg-gray-100 p-8">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-6">
-        {/* Header with welcome message and logout button. */}
+        {/* Header */}
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-bold text-gray-800">
             Welcome, {user ? user.username : "Admin"}!
@@ -27,9 +27,9 @@ function AdminDashboard() {
           </button>
         </div>
 
-        {/* Navigation links grid for admin functions. */}
+        {/* Navigation Links Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
-          {/* Link to the news management page. */}
+          {/* Manage News */}
           <Link
             to="/admin/manage-news"
             className="bg-blue-100 p-6 rounded-lg text-center hover:bg-blue-200 transition"
@@ -37,7 +37,7 @@ function AdminDashboard() {
             <h3 className="font-bold text-lg text-blue-800">Manage News</h3>
           </Link>
 
-          {/* Other admin links. */}
+          {/* Manage Events */}
           <Link
             to="/admin/manage-events"
             className="bg-green-100 p-6 rounded-lg text-center hover:bg-green-200 transition"
@@ -46,6 +46,8 @@ function AdminDashboard() {
               Manage Achievements
             </h3>
           </Link>
+
+          {/* Manage Gallery */}
           <Link
             to="/admin/manage-gallery"
             className="bg-yellow-100 p-6 rounded-lg text-center hover:bg-yellow-200 transition"
@@ -53,6 +55,24 @@ function AdminDashboard() {
             <h3 className="font-bold text-lg text-yellow-800">
               Manage Gallery
             </h3>
+          </Link>
+
+          {/* Manage Field Trips */}
+          <Link
+            to="/admin/manage-field-trips"
+            className="bg-purple-100 p-6 rounded-lg text-center hover:bg-purple-200 transition"
+          >
+            <h3 className="font-bold text-lg text-purple-800">
+              Manage Field Trips
+            </h3>
+          </Link>
+
+          {/* View Admissions */}
+          <Link
+            to="/admin/view-admissions"
+            className="bg-red-100 p-6 rounded-lg text-center hover:bg-red-200 transition"
+          >
+            <h3 className="font-bold text-lg text-red-800">View Admissions</h3>
           </Link>
         </div>
       </div>

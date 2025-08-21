@@ -83,11 +83,11 @@ function ManageNews() {
       >
         &larr; Back to Dashboard
       </Link>
-      <h1 className="text-2xl font-bold mb-4">Manage News</h1>
+      <h1 className="text-2xl font-bold mb-4">Manage facilities</h1>
 
       {/* Create News Form */}
       <div className="bg-white p-6 rounded-lg shadow-md mb-8">
-        <h2 className="text-xl font-semibold mb-4">Add New Article</h2>
+        <h2 className="text-xl font-semibold mb-4">Add New facilities</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label
@@ -142,7 +142,7 @@ function ManageNews() {
             }`}
             disabled={!imageUrl}
           >
-            Add Article
+            Add facilities
           </button>
         </form>
         {message && <p className="mt-4 text-green-600">{message}</p>}
@@ -150,7 +150,7 @@ function ManageNews() {
 
       {/* Existing News List */}
       <div className="bg-white p-6 rounded-lg shadow-md">
-        <h2 className="text-xl font-semibold mb-4">Existing Articles</h2>
+        <h2 className="text-xl font-semibold mb-4">Existing facilities</h2>
         {isLoading ? (
           <p>Loading...</p>
         ) : (

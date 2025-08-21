@@ -55,45 +55,101 @@ function ManageEvents() {
 
   return (
     <div className="container mx-auto p-4">
-      <Link to="/admin/dashboard" className="text-blue-500 hover:underline mb-4 inline-block">&larr; Back to Dashboard</Link>
-      <h1 className="text-2xl font-bold mb-4">Manage Events</h1>
+      <Link
+        to="/admin/dashboard"
+        className="text-blue-500 hover:underline mb-4 inline-block"
+      >
+        &larr; Back to Dashboard
+      </Link>
+      <h1 className="text-2xl font-bold mb-4">Manage Achivement</h1>
 
       {/* Create Event Form */}
       <div className="bg-white p-6 rounded-lg shadow-md mb-8">
-        <h2 className="text-xl font-semibold mb-4">Add New Event</h2>
+        <h2 className="text-xl font-semibold mb-4">Add New Achivement</h2>
         <form onSubmit={handleSubmit}>
           {/* Form fields */}
           <div className="mb-4">
-            <label className="block text-gray-700 font-bold mb-2">Event Name</label>
-            <input type="text" name="eventName" value={formData.eventName} onChange={handleChange} className="w-full p-2 border rounded" required />
+            <label className="block text-gray-700 font-bold mb-2">
+              Achivement Name
+            </label>
+            <input
+              type="text"
+              name="eventName"
+              value={formData.eventName}
+              onChange={handleChange}
+              className="w-full p-2 border rounded"
+              required
+            />
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700 font-bold mb-2">Description</label>
-            <textarea name="description" value={formData.description} onChange={handleChange} className="w-full p-2 border rounded" rows="3" required></textarea>
+            <label className="block text-gray-700 font-bold mb-2">
+              Description
+            </label>
+            <textarea
+              name="description"
+              value={formData.description}
+              onChange={handleChange}
+              className="w-full p-2 border rounded"
+              rows="3"
+              required
+            ></textarea>
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700 font-bold mb-2">Event Date</label>
-            <input type="date" name="eventDate" value={formData.eventDate} onChange={handleChange} className="w-full p-2 border rounded" required />
+            <label className="block text-gray-700 font-bold mb-2">
+              Achivement Date
+            </label>
+            <input
+              type="date"
+              name="eventDate"
+              value={formData.eventDate}
+              onChange={handleChange}
+              className="w-full p-2 border rounded"
+              required
+            />
           </div>
           {/* Image Uploader */}
           <div className="mb-4">
-            <label className="block text-gray-700 font-bold mb-2">Event Image</label>
-            <ImageUploader onSuccess={handleImageSuccess} onError={(err) => console.log(err)} />
-            {imageUrl && <img src={imageUrl} alt="Preview" className="mt-4 w-32 h-auto rounded" />}
+            <label className="block text-gray-700 font-bold mb-2">
+              Achivement Image
+            </label>
+            <ImageUploader
+              onSuccess={handleImageSuccess}
+              onError={(err) => console.log(err)}
+            />
+            {imageUrl && (
+              <img
+                src={imageUrl}
+                alt="Preview"
+                className="mt-4 w-32 h-auto rounded"
+              />
+            )}
           </div>
-          <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Add Event</button>
+          <button
+            type="submit"
+            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+          >
+            Add Event
+          </button>
         </form>
         {message && <p className="mt-4 text-green-600">{message}</p>}
       </div>
 
       {/* Existing Events List */}
       <div className="bg-white p-6 rounded-lg shadow-md">
-        <h2 className="text-xl font-semibold mb-4">Existing Events</h2>
+        <h2 className="text-xl font-semibold mb-4">Existing Achivement</h2>
         <ul className="space-y-4">
           {events.map((event) => (
-            <li key={event._id} className="flex justify-between items-center p-2 border-b">
+            <li
+              key={event._id}
+              className="flex justify-between items-center p-2 border-b"
+            >
               <span>{event.eventName}</span>
-              <button onClick={() => handleDelete(event._id)} className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">Delete</button>
+              <button
+                onClick={() => handleDelete(event._id)}
+                className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
+              >
+                Delete
+              </button>
             </li>
           ))}
         </ul>

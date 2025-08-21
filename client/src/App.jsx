@@ -8,6 +8,9 @@ import PrivateRoute from './routes/PrivateRoute';
 // --- Page Components ---
 import MainWebsite from './pages/MainWebsite';
 import AdminLoginPage from './pages/AdminLoginPage';
+import SportsCulturalPage from "./pages/SportsCultural";
+import FieldTripsPage from "./pages/FieldTripsPage";
+import StaffPage from "./pages/StaffPage";
 
 // --- Admin Layout and Pages ---
 import AdminLayout from './components/admin/AdminLayout.jsx';
@@ -16,6 +19,8 @@ import ManageNews from './pages/admin/ManageNews.jsx';
 import ManageEvents from './pages/admin/ManageEvents.jsx';
 import ManageGallery from './pages/admin/ManageGallery.jsx';
 import ViewAdmissions from './pages/admin/ViewAdmissions.jsx';
+import ManageStaff from "./pages/admin/ManageStaff.jsx";
+import ManageFieldTrips from "./pages/admin/ManageFieldTrips.jsx";
 
 function App() {
   return (
@@ -26,12 +31,15 @@ function App() {
         {/* ============================================= */}
         <Route path="/" element={<MainWebsite />} />
         <Route path="/admin/login" element={<AdminLoginPage />} />
+        <Route path="/sports-cultural" element={<SportsCulturalPage />} />
+        <Route path="/field-trips" element={<FieldTripsPage />} />
+        <Route path="/staff" element={<StaffPage />} />
 
         {/* ============================================= */}
         {/* === PRIVATE ADMIN ROUTES W/ SHARED LAYOUT === */}
         {/* ============================================= */}
-        <Route 
-          path="/admin" 
+        <Route
+          path="/admin"
           element={
             <PrivateRoute>
               <AdminLayout />
@@ -44,8 +52,9 @@ function App() {
           <Route path="manage-events" element={<ManageEvents />} />
           <Route path="manage-gallery" element={<ManageGallery />} />
           <Route path="view-admissions" element={<ViewAdmissions />} />
+          <Route path="manage-staff" element={<ManageStaff />} />
+          <Route path="manage-field-trips" element={<ManageFieldTrips />} />
         </Route>
-
       </Routes>
     </AuthProvider>
   );

@@ -6,7 +6,7 @@ const API_URL = "https://newgeneration-production.up.railway.app/api/";
 
 // Gets the authentication token from local storage.
 const getAuthToken = () => {
-  const user = JSON.parse(localStorage.getItem('user'));
+  const user = JSON.parse(localStorage.getItem("user"));
   return user ? user.token : null;
 };
 
@@ -14,7 +14,9 @@ const getAuthToken = () => {
 const getAuthConfig = () => {
   const token = getAuthToken();
   if (!token) {
-    throw new Error("No authentication token found. Please log in.");
+    throw new Error(
+      "Authentication token not found. Please log in as an administrator."
+    );
   }
   return {
     headers: {
@@ -34,7 +36,10 @@ export const fetchNews = async () => {
     const response = await axios.get(`${API_URL}news`);
     return response.data;
   } catch (error) {
-    console.error("Error fetching news:", error.response?.data || error.message);
+    console.error(
+      "Error fetching news:",
+      error.response?.data || error.message
+    );
     return [];
   }
 };
@@ -48,7 +53,10 @@ export const fetchEvents = async () => {
     const response = await axios.get(`${API_URL}events`);
     return response.data;
   } catch (error) {
-    console.error("Error fetching events:", error.response?.data || error.message);
+    console.error(
+      "Error fetching events:",
+      error.response?.data || error.message
+    );
     return [];
   }
 };
@@ -62,7 +70,44 @@ export const fetchGallery = async () => {
     const response = await axios.get(`${API_URL}gallery`);
     return response.data;
   } catch (error) {
-    console.error("Error fetching gallery images:", error.response?.data || error.message);
+    console.error(
+      "Error fetching gallery images:",
+      error.response?.data || error.message
+    );
+    return [];
+  }
+};
+
+/**
+ * Fetches all staff members.
+ * @returns {Promise<Array>} A promise that resolves to an array of staff members.
+ */
+export const fetchStaff = async () => {
+  try {
+    const response = await axios.get(`${API_URL}staff`);
+    return response.data;
+  } catch (error) {
+    console.error(
+      "Error fetching staff:",
+      error.response?.data || error.message
+    );
+    return [];
+  }
+};
+
+/**
+ * **NEW:** Fetches all field trip images.
+ * @returns {Promise<Array>} A promise that resolves to an array of field trip image objects.
+ */
+export const fetchFieldTrips = async () => {
+  try {
+    const response = await axios.get(`${API_URL}field-trips`);
+    return response.data;
+  } catch (error) {
+    console.error(
+      "Error fetching field trip images:",
+      error.response?.data || error.message
+    );
     return [];
   }
 };
@@ -77,12 +122,12 @@ export const submitAdmission = async (formData) => {
     const response = await axios.post(`${API_URL}admissions`, formData);
     return response.data;
   } catch (error) {
-    throw error.response?.data || new Error('Server submission error');
+    throw error.response?.data || new Error("Server submission error");
   }
 };
 
 /**
- * Submits a contact form.
+ * Submits a contact form message.
  * @param {object} formData - The contact form data.
  * @returns {Promise<object>} A promise that resolves to the contact form submission object.
  */
@@ -103,10 +148,13 @@ export const submitContactForm = async (formData) => {
  */
 export const adminLogin = async (username, password) => {
   try {
-    const response = await axios.post(`${API_URL}auth/login`, { username, password });
+    const response = await axios.post(`${API_URL}auth/login`, {
+      username,
+      password,
+    });
     return response.data;
   } catch (error) {
-    throw error.response?.data || new Error('Login failed');
+    throw error.response?.data || new Error("Login failed");
   }
 };
 
@@ -119,10 +167,14 @@ export const adminLogin = async (username, password) => {
  */
 export const createNews = async (newsData) => {
   try {
-    const response = await axios.post(`${API_URL}news`, newsData, getAuthConfig());
+    const response = await axios.post(
+      `${API_URL}news`,
+      newsData,
+      getAuthConfig()
+    );
     return response.data;
   } catch (error) {
-    throw error.response?.data || new Error('Failed to create news');
+    throw error.response?.data || new Error("Failed to create news");
   }
 };
 
@@ -133,10 +185,13 @@ export const createNews = async (newsData) => {
  */
 export const deleteNews = async (newsId) => {
   try {
-    const response = await axios.delete(`${API_URL}news/${newsId}`, getAuthConfig());
+    const response = await axios.delete(
+      `${API_URL}news/${newsId}`,
+      getAuthConfig()
+    );
     return response.data;
   } catch (error) {
-    throw error.response?.data || new Error('Failed to delete news');
+    throw error.response?.data || new Error("Failed to delete news");
   }
 };
 
@@ -147,10 +202,14 @@ export const deleteNews = async (newsId) => {
  */
 export const createEvent = async (eventData) => {
   try {
-    const response = await axios.post(`${API_URL}events`, eventData, getAuthConfig());
+    const response = await axios.post(
+      `${API_URL}events`,
+      eventData,
+      getAuthConfig()
+    );
     return response.data;
   } catch (error) {
-    throw error.response?.data || new Error('Failed to create event');
+    throw error.response?.data || new Error("Failed to create event");
   }
 };
 
@@ -161,10 +220,13 @@ export const createEvent = async (eventData) => {
  */
 export const deleteEvent = async (eventId) => {
   try {
-    const response = await axios.delete(`${API_URL}events/${eventId}`, getAuthConfig());
+    const response = await axios.delete(
+      `${API_URL}events/${eventId}`,
+      getAuthConfig()
+    );
     return response.data;
   } catch (error) {
-    throw error.response?.data || new Error('Failed to delete event');
+    throw error.response?.data || new Error("Failed to delete event");
   }
 };
 
@@ -175,10 +237,14 @@ export const deleteEvent = async (eventId) => {
  */
 export const addGalleryImage = async (imageData) => {
   try {
-    const response = await axios.post(`${API_URL}gallery`, imageData, getAuthConfig());
+    const response = await axios.post(
+      `${API_URL}gallery`,
+      imageData,
+      getAuthConfig()
+    );
     return response.data;
   } catch (error) {
-    throw error.response?.data || new Error('Failed to add gallery image');
+    throw error.response?.data || new Error("Failed to add gallery image");
   }
 };
 
@@ -189,10 +255,13 @@ export const addGalleryImage = async (imageData) => {
  */
 export const deleteGalleryImage = async (imageId) => {
   try {
-    const response = await axios.delete(`${API_URL}gallery/${imageId}`, getAuthConfig());
+    const response = await axios.delete(
+      `${API_URL}gallery/${imageId}`,
+      getAuthConfig()
+    );
     return response.data;
   } catch (error) {
-    throw error.response?.data || new Error('Failed to delete gallery image');
+    throw error.response?.data || new Error("Failed to delete gallery image");
   }
 };
 
@@ -205,7 +274,7 @@ export const getAdmissions = async () => {
     const response = await axios.get(`${API_URL}admissions`, getAuthConfig());
     return response.data;
   } catch (error) {
-    throw error.response?.data || new Error('Failed to fetch admissions');
+    throw error.response?.data || new Error("Failed to fetch admissions");
   }
 };
 
@@ -217,10 +286,86 @@ export const getAdmissions = async () => {
  */
 export const updateAdmissionStatus = async (id, status) => {
   try {
-    const response = await axios.put(`${API_URL}admissions/${id}`, { status }, getAuthConfig());
+    const response = await axios.put(
+      `${API_URL}admissions/${id}`,
+      { status },
+      getAuthConfig()
+    );
     return response.data;
   } catch (error) {
-    throw error.response?.data || new Error('Failed to update admission status');
+    throw (
+      error.response?.data || new Error("Failed to update admission status")
+    );
+  }
+};
+
+/**
+ * Adds a new staff member.
+ * @param {object} staffData - The data for the new staff member.
+ * @returns {Promise<object>} A promise that resolves to the created staff member object.
+ */
+export const addStaffMember = async (staffData) => {
+  try {
+    const response = await axios.post(
+      `${API_URL}staff`,
+      staffData,
+      getAuthConfig()
+    );
+    return response.data;
+  } catch (error) {
+    throw error.response?.data || new Error("Failed to add staff member");
+  }
+};
+
+/**
+ * Deletes a staff member.
+ * @param {string} staffId - The ID of the staff member to delete.
+ * @returns {Promise<object>} A promise that resolves to a confirmation object.
+ */
+export const deleteStaffMember = async (staffId) => {
+  try {
+    const response = await axios.delete(
+      `${API_URL}staff/${staffId}`,
+      getAuthConfig()
+    );
+    return response.data;
+  } catch (error) {
+    throw error.response?.data || new Error("Failed to delete staff member");
+  }
+};
+
+/**
+ * Adds a new field trip.
+ * @param {object} tripData - The data for the new field trip.
+ * @returns {Promise<object>} A promise that resolves to the created field trip object.
+ */
+export const addFieldTrip = async (tripData) => {
+  try {
+    const response = await axios.post(
+      `${API_URL}field-trips`,
+      tripData,
+      getAuthConfig()
+    );
+    return response.data;
+  } catch (error) {
+    throw error.response?.data || new Error("Failed to add field trip");
+  }
+};
+
+/**
+ * Deletes a field trip by ID.
+ * @param {string} tripId - The ID of the field trip to delete.
+ * @returns {Promise<object>} A promise that resolves to a confirmation object.
+ */
+export const deleteFieldTrip = async (tripId) => {
+  try {
+    const response = await axios.delete(
+      `${API_URL}field-trips/${tripId}`,
+      getAuthConfig()
+    );
+    return response.data;
+  } catch (error) {
+    throw error.response?.data || new Error("Failed to delete field trip");
   }
 };
 

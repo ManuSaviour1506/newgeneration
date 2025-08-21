@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
+import { useInView } from "react-intersection-observer";
+import {
+  FaGraduationCap,
+  FaChalkboardTeacher,
+  FaUsers,
+  FaLightbulb,
+} from "react-icons/fa";
 
 // School-themed image URLs
 const topImageUrl =
   "https://res.cloudinary.com/dlexfctt4/image/upload/v1755700278/Untitled_design_1_hed5li.png";
+const middleImageUrl =
+  "https://res.cloudinary.com/dlexfctt4/image/upload/v1755786353/WhatsApp_Image_2025-08-20_at_19.21.43_2_qz0tyu.jpg"; // New image added
 const bottomImageUrl =
   "https://res.cloudinary.com/dlexfctt4/image/upload/v1755713975/WhatsApp_Image_2025-08-20_at_19.30.04_at3god.jpg";
 
@@ -20,7 +29,7 @@ const SectionWrapper = ({ children, id, title }) => (
     </div>
 
     <div className="container mx-auto px-4 relative z-10">
-      <h2 className="text-5xl md:text-6xl font-extrabold text-center text-blue-900 mb-16 drop-shadow-lg">
+      <h2 className="text-5xl md:text-6xl font-extrabold text-center text-blue-900 mb-16 drop-shadow-lg font-bubblegum">
         {title}
       </h2>
       {children}
@@ -29,6 +38,11 @@ const SectionWrapper = ({ children, id, title }) => (
 );
 
 function AboutSection() {
+  const [hoveredIcon, setHoveredIcon] = useState(null);
+
+  const handleMouseEnter = (iconName) => setHoveredIcon(iconName);
+  const handleMouseLeave = () => setHoveredIcon(null);
+
   return (
     <SectionWrapper id="about" title="Playful About Our School">
       {/* Custom CSS for animations and unique styling */}
@@ -112,14 +126,20 @@ function AboutSection() {
           0% { transform: rotate(0deg); }
           100% { transform: rotate(360deg); }
         }
+        .react-icon-hover {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        .react-icon-hover:hover {
+            transform: scale(1.2) rotate(15deg);
+        }
         `}
       </style>
 
       {/* Main content grid for images and text */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         {/* Left Column for Images */}
         <div className="flex flex-col gap-8">
-          {/* Top Image Container */}
+          {/* Three Image Containers */}
           <div className="image-container relative rounded-[2.5rem] shadow-2xl p-4 transform hover:scale-105 transition-transform duration-500">
             <img
               src={topImageUrl}
@@ -127,58 +147,122 @@ function AboutSection() {
               className="rounded-3xl w-full h-auto"
             />
           </div>
-          {/* Bottom Image Container */}
-          <div className="relative rounded-[2.5rem] shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-500">
-            <div className="image-container absolute top-0 left-0 w-full h-full rounded-[2.5rem]"></div>
+          <div className="image-container relative rounded-[2.5rem] shadow-2xl p-4 transform hover:scale-105 transition-transform duration-500">
+            <img
+              src={middleImageUrl}
+              alt="Students Learning"
+              className="rounded-3xl w-full h-auto"
+            />
+          </div>
+          <div className="image-container relative rounded-[2.5rem] shadow-2xl p-4 transform hover:scale-105 transition-transform duration-500">
             <img
               src={bottomImageUrl}
               alt="Classroom with kids"
-              className="relative z-10 rounded-3xl w-full h-auto p-4"
+              className="rounded-3xl w-full h-auto"
             />
           </div>
         </div>
 
         {/* Right Column for Content */}
         <div className="flex flex-col gap-6 text-gray-700">
-          <div className="bg-white p-8 rounded-3xl shadow-2xl transform hover:rotate-2 transition-transform duration-500">
-            <h3 className="text-4xl font-bubblegum text-purple-600 mb-4 drop-shadow-md">
-              A World of Learning and Fun!
-            </h3>
-            <p className="text-lg leading-relaxed">
-              Welcome to our school, a magical place where every day is an
-              adventure! We believe in learning through play, where little minds
-              can explore, discover, and grow in a safe and happy environment.
-              Our teachers are like friendly guides, helping every child find
-              their spark and shine.
+          {/* About Box */}
+          <div
+            className="bg-white p-8 rounded-3xl shadow-2xl transform hover:-rotate-2 transition-transform duration-500"
+            onMouseEnter={() => handleMouseEnter("about")}
+            onMouseLeave={handleMouseLeave}
+          >
+            <div className="flex items-center mb-4">
+              <FaUsers
+                size={40}
+                className={`text-blue-500 mr-4 react-icon-hover ${
+                  hoveredIcon === "about" ? "text-blue-800" : ""
+                }`}
+              />
+              <h3 className="text-4xl font-bubblegum text-blue-600 drop-shadow-md">
+                About Our School
+              </h3>
+            </div>
+            <p className="text-lg leading-relaxed text-gray-700">
+              Our school is a place of wonder and growth. We are dedicated to
+              nurturing young minds in a safe, vibrant, and innovative
+              environment. Our child-centric approach ensures every student
+              receives the attention and care they need to succeed.
             </p>
           </div>
 
-          <div className="bg-white p-8 rounded-3xl shadow-2xl transform hover:-rotate-2 transition-transform duration-500">
-            <h3 className="text-4xl font-bubblegum text-pink-600 mb-4 drop-shadow-md">
-              Our Super Powers!
-            </h3>
-            <ul className="space-y-4 text-lg font-semibold">
-              <li className="flex items-center">
-                <span className="text-yellow-500 mr-3 text-2xl animate-bounce-custom">
-                  ⭐
-                </span>
-                <span className="text-gray-800">Creative & Fun Activities</span>
-              </li>
-              <li className="flex items-center">
-                <span className="text-green-500 mr-3 text-2xl animate-bounce-custom animation-delay-1000">
-                  🎨
-                </span>
-                <span className="text-gray-800">
-                  Colorful & Safe Classrooms
-                </span>
-              </li>
-              <li className="flex items-center">
-                <span className="text-blue-500 mr-3 text-2xl animate-bounce-custom animation-delay-2000">
-                  🤗
-                </span>
-                <span className="text-gray-800">Kind & Caring Teachers</span>
-              </li>
-            </ul>
+          {/* Challenges Box */}
+          <div
+            className="bg-white p-8 rounded-3xl shadow-2xl transform hover:rotate-2 transition-transform duration-500"
+            onMouseEnter={() => handleMouseEnter("challenges")}
+            onMouseLeave={handleMouseLeave}
+          >
+            <div className="flex items-center mb-4">
+              <FaGraduationCap
+                size={40}
+                className={`text-purple-500 mr-4 react-icon-hover ${
+                  hoveredIcon === "challenges" ? "text-purple-800" : ""
+                }`}
+              />
+              <h3 className="text-4xl font-bubblegum text-purple-600 drop-shadow-md">
+                Our Challenges
+              </h3>
+            </div>
+            <p className="text-lg leading-relaxed text-gray-700">
+              We believe in challenging our students not just academically, but
+              in every aspect of life. We encourage them to think critically,
+              solve problems creatively, and embrace new experiences with
+              courage and confidence.
+            </p>
+          </div>
+
+          {/* Our Aim Box */}
+          <div
+            className="bg-white p-8 rounded-3xl shadow-2xl transform hover:-rotate-2 transition-transform duration-500"
+            onMouseEnter={() => handleMouseEnter("aim")}
+            onMouseLeave={handleMouseLeave}
+          >
+            <div className="flex items-center mb-4">
+              <FaLightbulb
+                size={40}
+                className={`text-yellow-500 mr-4 react-icon-hover ${
+                  hoveredIcon === "aim" ? "text-yellow-800" : ""
+                }`}
+              />
+              <h3 className="text-4xl font-bubblegum text-green-600 drop-shadow-md">
+                Our Aim
+              </h3>
+            </div>
+            <p className="text-lg leading-relaxed text-gray-700">
+              Our primary aim is to cultivate a love for learning in every
+              child. We strive to provide an educational experience that is both
+              academically enriching and personally fulfilling, fostering
+              curiosity, creativity, and a strong sense of community.
+            </p>
+          </div>
+
+          {/* Our Mission Box */}
+          <div
+            className="bg-white p-8 rounded-3xl shadow-2xl transform hover:rotate-2 transition-transform duration-500"
+            onMouseEnter={() => handleMouseEnter("mission")}
+            onMouseLeave={handleMouseLeave}
+          >
+            <div className="flex items-center mb-4">
+              <FaChalkboardTeacher
+                size={40}
+                className={`text-pink-500 mr-4 react-icon-hover ${
+                  hoveredIcon === "mission" ? "text-pink-800" : ""
+                }`}
+              />
+              <h3 className="text-4xl font-bubblegum text-orange-600 drop-shadow-md">
+                Our Mission
+              </h3>
+            </div>
+            <p className="text-lg leading-relaxed text-gray-700">
+              Our mission is to provide an inclusive and supportive learning
+              environment that empowers students to reach their full potential.
+              We are dedicated to fostering intellectual curiosity, personal
+              growth, and a strong sense of social responsibility.
+            </p>
           </div>
         </div>
       </div>

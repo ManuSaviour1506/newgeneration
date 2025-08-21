@@ -66,7 +66,7 @@ function AdmissionsSection() {
       className="w-full py-16 md:py-24 bg-gradient-to-br from-blue-100 to-pink-100"
     >
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-[#00008B] mb-12 font-display">
+        <h2 className="text-7xl font-bubblegum text-blue-700 mb-6 drop-shadow-md text-center">
           Admissions Open
         </h2>
         <div className="flex flex-col md:flex-row items-center gap-12">
