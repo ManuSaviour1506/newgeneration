@@ -9,7 +9,7 @@ const authenticator = async () => {
     const token = user ? user.token : null;
 
     const response = await axios.get(
-      "https://newgeneration-production.up.railway.app/api/imagekit-auth",
+      "https://newgeneration-6y61.onrender.com/api/imagekit-auth",
       {
         headers: { Authorization: `Bearer ${token}` },
       }
@@ -66,5 +66,6 @@ function ImageUploader({ onSuccess }) {
 }
 
 export default ImageUploader;
+
 
 
