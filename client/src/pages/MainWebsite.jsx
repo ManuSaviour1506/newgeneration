@@ -16,21 +16,14 @@ function MainWebsite() {
       <main>
         <HeroSection />
         <AboutSection />
-<<<<<<< HEAD
-      
+
         <EventsSection />
-=======
->>>>>>> 7ff613b (final deploy)
         <NewsSection />
         <EventsSection />
 
         <GallerySection />
-<<<<<<< HEAD
-         <ContactSection />
-=======
+        <ContactSection />
         {/* Remove FieldTripsSection and StaffSection from here */}
-
->>>>>>> 7ff613b (final deploy)
         <AdmissionsSection />
         <ContactSection />
       </main>
