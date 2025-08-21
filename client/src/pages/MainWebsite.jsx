@@ -17,7 +17,7 @@ function MainWebsite() {
         <HeroSection />
         <AboutSection />
 
-        <EventsSection />
+     
         <NewsSection />
         <EventsSection />
 
@@ -34,4 +34,5 @@ function MainWebsite() {
 
 
 export default MainWebsite;
+
 
