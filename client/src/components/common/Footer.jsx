@@ -1,8 +1,8 @@
 import React from "react";
 import { Link as ScrollLink } from "react-scroll";
 // Import icons from react-icons library
-import { FaFacebook, FaYoutube, FaInstagram } from 'react-icons/fa';
-import { IoLocationSharp, IoCall, IoMail } from 'react-icons/io5';
+import { FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { IoLocationSharp, IoCall, IoMail } from "react-icons/io5";
 
 function Footer() {
   const quickLinks = [
@@ -12,10 +12,15 @@ function Footer() {
     { to: "contact", label: "Contact" },
   ];
 
+  // Updated social links with real URLs and new icons
   const socialLinks = [
-    { href: "#", icon: FaFacebook, label: "Facebook" },
-    { href: "#", icon: FaYoutube, label: "Youtube" },
-    { href: "#", icon: FaInstagram, label: "Instagram" },
+    {
+      href: "https://www.instagram.com/newgeneration.eluru",
+      icon: FaInstagram,
+      label: "Instagram",
+    },
+    { href: "https://wa.me/9848603916", icon: FaWhatsapp, label: "WhatsApp" },
+    { href: "tel:+919848603916", icon: IoCall, label: "Call" },
   ];
 
   return (
@@ -91,10 +96,12 @@ function Footer() {
                 <a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={social.label}
                   className="text-gray-700 hover:text-black transition-colors"
                 >
-                  <social.icon size={24} />
+                  <social.icon size={36} />
                 </a>
               ))}
             </div>
