@@ -169,28 +169,66 @@ function ContactSection() {
       </div>
 
       {/* Social Media and Share Buttons */}
-      <div className="flex justify-center items-center space-x-8 mt-16 flex-wrap">
+      <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 mt-16 flex-wrap">
+        {/* WhatsApp Icon */}
         <a
           href="https://wa.me/9848603916"
           target="_blank"
           rel="noopener noreferrer"
-          className="social-icon w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl"
+          className="social-icon w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transform transition-transform duration-300 hover:scale-110 animate-pulse"
         >
           <FaWhatsapp className="w-10 h-10 text-green-500" />
         </a>
+
+        {/* Phone Icon */}
         <a
           href="tel:9848603916"
-          className="social-icon w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl"
+          className="social-icon w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transform transition-transform duration-300 hover:scale-110 animate-pulse animation-delay-500"
         >
           <FaPhoneAlt className="w-8 h-8 text-blue-500" />
         </a>
+
+        {/* Share Location Button 
         <button
           onClick={handleShareLocation}
-          className="social-icon flex items-center px-6 py-3 bg-white rounded-full shadow-lg hover:shadow-xl font-bold text-gray-800"
+          href="https://maps.app.goo.gl/dmEs8zCpAyzBQxy37"
+          className="social-icon w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transform transition-transform duration-300 hover:scale-110 hidden sm:flex animate-pulse animation-delay-1000"
+        >
+          <FaShareAlt className="w-8 h-8 text-blue-500" />
+        </button>
+
+         Mobile-specific Share Button (Text-based) 
+        <button
+          onClick={handleShareLocation}
+          href="https://maps.app.goo.gl/dmEs8zCpAyzBQxy37"
+          className="flex items-center px-6 py-3 bg-white rounded-full shadow-lg hover:shadow-xl font-bold text-gray-800 sm:hidden"
         >
           <FaShareAlt className="w-6 h-6 mr-2 text-blue-500" />
           Share Location
         </button>
+        */}
+
+        <style>
+          {`
+          @keyframes pulse {
+            0%, 100% {
+              transform: scale(1);
+            }
+            50% {
+              transform: scale(1.05);
+            }
+          }
+          .animate-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+          }
+          .animation-delay-500 {
+            animation-delay: 0.5s;
+          }
+          .animation-delay-1000 {
+            animation-delay: 1s;
+          }
+        `}
+        </style>
       </div>
     </SectionWrapper>
   );
