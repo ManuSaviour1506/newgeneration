@@ -1,39 +1,6 @@
 import React, { useState } from "react";
-// The following two components are for a consistent design
-const SectionWrapper = ({ children, id, title, className = '' }) => (
-  <section
-    id={id}
-    className={`min-h-screen py-24 relative overflow-hidden font-inter ${className}`}
-  >
-    {/* Background confetti shapes for a festive feel */}
-    <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0 opacity-50">
-      <div className="absolute w-24 h-24 bg-yellow-300 rounded-full top-10 left-10 animate-blob mix-blend-multiply filter blur-3xl"></div>
-      <div className="absolute w-32 h-32 bg-purple-300 rounded-full top-1/3 left-1/4 animate-blob animation-delay-2000 mix-blend-multiply filter blur-3xl"></div>
-      <div className="absolute w-40 h-40 bg-pink-300 rounded-full bottom-20 right-20 animate-blob animation-delay-4000 mix-blend-multiply filter blur-3xl"></div>
-    </div>
-
-    <div className="container mx-auto px-4 relative z-10">
-      <h2 className="text-5xl md:text-6xl font-extrabold text-center text-blue-900 mb-16 drop-shadow-lg font-bubblegum">
-        {title}
-      </h2>
-      {children}
-    </div>
-  </section>
-);
-
-// Mock API service for demonstration
-const submitContactForm = (formData) => {
-  console.log("Submitting form data:", formData);
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      // Simulate success
-      resolve({ message: 'Message sent successfully! We will contact you soon.' });
-      // To simulate an error, uncomment the line below and comment the one above
-      // reject({ message: 'Error: Something went wrong. Please try again later.' });
-    }, 1500);
-  });
-};
-
+import SectionWrapper from "../common/SectionWrapper";
+import { submitContactForm } from "../../api/apiService";
 import { FaWhatsapp, FaPhoneAlt, FaShareAlt } from "react-icons/fa";
 
 function ContactSection() {
@@ -49,8 +16,6 @@ function ContactSection() {
     message: "",
     error: false,
   });
-
-  const [shareMessage, setShareMessage] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -84,58 +49,26 @@ function ContactSection() {
         await navigator.share({
           title: "New Generation School Location",
           text: "Find our location on the map!",
-          url: "https://maps.app.goo.gl/wgV4XEMVnxy22zrC8",
+          url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3401.373977797708!2d74.34149951515275!3d31.520336681320667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391904a0e98c9f97%3A0x64b85c2c7f1a30f1!2sNew%20Generation%20School%2C%20B-1%2C%20Lakhpati%20Plaza%2C%20Gulberg%203%2C%20Lahore%2C%20Pakistan!5e0!3m2!1sen!2sus!4v1625091234567!5m2!1sen!2sus7",
         });
       } catch (error) {
         console.error("Error sharing:", error);
       }
     } else {
-      // Use a state-driven message box instead of alert()
-      setShareMessage({
-        text: "Web Share API is not supported in this browser. You can manually copy the link.",
-        error: true,
-      });
-      setTimeout(() => setShareMessage(null), 5000);
+      alert(
+        "Web Share API is not supported in this browser. You can manually copy the link."
+      );
     }
   };
 
   return (
     <SectionWrapper
       id="contact"
-      title="Contact Us"
+      title="Get In Touch"
       className="bg-gradient-to-br from-blue-100 to-pink-100"
     >
       <style>
         {`
-          @import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Inter:wght@400;600;700;800&display=swap');
-          
-          .font-inter {
-            font-family: 'Inter', sans-serif;
-          }
-
-          .font-bubblegum {
-              font-family: 'Bubblegum Sans', cursive;
-          }
-
-          @keyframes blob {
-            0% {
-              transform: translate(0, 0) scale(1);
-            }
-            33% {
-              transform: translate(30px, -50px) scale(1.1);
-            }
-            66% {
-              transform: translate(-20px, 20px) scale(0.9);
-            }
-            100% {
-              transform: translate(0, 0) scale(1);
-            }
-          }
-          
-          .animate-blob {
-            animation: blob 7s infinite cubic-bezier(0.64, 0.05, 0.51, 0.95);
-          }
-
           .social-icon {
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
             cursor: pointer;
@@ -223,9 +156,10 @@ function ContactSection() {
         {/* Right Column: Embedded Map */}
         <div className="w-full h-[500px] rounded-lg overflow-hidden shadow-md">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3821.2162126346643!2d81.10287797541459!3d16.716060321796878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3614cc49eabf9d%3A0x90af1bae13238044!2sNew%20Generation%20Public%20School!5e0!3m2!1sen!2sin!4v1755799982832!5m2!1sen!2sin"
-            width="600"
-            height="450"
+            title="School Location Map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3401.373977797708!2d74.34149951515275!3d31.520336681320667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391904a0e98c9f97%3A0x64b85c2c7f1a30f1!2sNew%20Generation%20School%2C%20B-1%2C%20Lakhpati%20Plaza%2C%20Gulberg%203%2C%20Lahore%2C%20Pakistan!5e0!3m2!1sen!2sus!4v1625091234567!5m2!1sen!2sus7"
+            width="100%"
+            height="100%"
             style={{ border: 0 }}
             allowFullScreen=""
             loading="lazy"
@@ -258,11 +192,6 @@ function ContactSection() {
           Share Location
         </button>
       </div>
-      {shareMessage && (
-        <div className={`mt-4 text-center font-semibold ${shareMessage.error ? 'text-red-500' : 'text-green-600'}`}>
-          {shareMessage.text}
-        </div>
-      )}
     </SectionWrapper>
   );
 }
