@@ -161,7 +161,7 @@ function ContactSection() {
             <div className="w-full rounded-lg overflow-hidden shadow-md">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3821.2162126346643!2d81.10287797541459!3d16.716060321796878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3614cc49eabf9d%3A0x90af1bae13238044!2sNew%20Generation%20Public%20School!5e0!3m2!1sen!2sin!4v1756029497621!5m2!1sen!2sin"
-                width="300"
+                width="100%"
                 height="500"
                 style={{ border: 0 }}
                 allowFullScreen=""
@@ -177,7 +177,7 @@ function ContactSection() {
             <div className="w-full rounded-lg overflow-hidden shadow-md">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3820.9180997159347!2d81.09130197541488!3d16.73093782138362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a366bcb6015b9b3%3A0xec46f37d44a1d3ec!2sNew%20Generations%20Public%20Schools%20(ICON%20CAMPUS)!5e0!3m2!1sen!2sin!4v1756029370383!5m2!1sen!2sin"
-                width="300"
+                width="100%"
                 height="500"
                 style={{ border: 0 }}
                 allowFullScreen=""
