@@ -63,6 +63,14 @@ function Footer() {
                 </span>
                 <span>Kothapet, Powerpet, Eluru, Andhra Pradesh, 534002</span>
               </li>
+              <li className="flex items-start">
+                <span className="mt-1 mr-3 shrink-0 text-gray-800">
+                  <IoLocationSharp size={20} />
+                </span>
+                <span>
+                  Chodimella, Eluru, Sanivarapupeta, Andhra Pradesh 5340052
+                </span>
+              </li>
               <li className="flex items-center">
                 <span className="mr-3 shrink-0 text-gray-800">
                   <IoCall size={20} />
