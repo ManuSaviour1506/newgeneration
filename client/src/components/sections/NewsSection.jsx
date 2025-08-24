@@ -12,7 +12,7 @@ function NewsSection() {
       setLoading(true);
       try {
         const newsData = await fetchNews();
-        setNews(newsData.slice(0, 3));
+        setNews(newsData.slice(0, 15));
       } catch (error) {
         console.error("Failed to load news:", error);
       } finally {
