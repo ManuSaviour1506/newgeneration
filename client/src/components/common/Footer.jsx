@@ -90,7 +90,28 @@ function Footer() {
                   href="mailto:newgenerationschooleluru@gmail.com"
                   className="hover:text-black transition-colors"
                 >
-                  newgenerationschooleluru@gmail.com
+                  Newgeneration.eluru@gmail.com
+                </a>
+              </li>
+              <li className="flex items-center">
+                <span className="mr-3 shrink-0 text-gray-800">
+                  <IoMail size={20} />
+                </span>
+                <a
+                  href="mailto:newgenerationschooleluru@gmail.com"
+                  className="hover:text-black transition-colors"
+                >
+                  <li className="flex items-center">
+                    <span className="mr-3 shrink-0 text-gray-800">
+                      <IoMail size={20} />
+                    </span>
+                    <a
+                      href="mailto:nandipallivandana@gmail.com"
+                      className="hover:text-black transition-colors"
+                    >
+                      nandipallivandana@gmail.com
+                    </a>
+                  </li>
                 </a>
               </li>
             </ul>
