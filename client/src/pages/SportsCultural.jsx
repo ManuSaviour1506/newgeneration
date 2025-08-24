@@ -8,58 +8,78 @@ function SportsCultural() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const sportsActivities = [
-    { 
-      title: "PLAY SCHOOL", 
-      description: "Our play school section focuses on creative learning through play, helping young children develop essential motor and social skills.", 
-      imageUrl: "https://res.cloudinary.com/dlexfctt4/image/upload/v1755788621/IMG_1938_kltepb.jpg" 
+    {
+      title: "PLAY SCHOOL",
+      description:
+        "Our play school section focuses on creative learning through play, helping young children develop essential motor and social skills.",
+      imageUrl:
+        "https://res.cloudinary.com/dlexfctt4/image/upload/v1755788621/IMG_1938_kltepb.jpg",
     },
-    { 
-      title: "Carrom-Board", 
-      description: "Carrom-board promotes strategic thinking and precision, encouraging friendly competition among students.", 
-      imageUrl: "https://res.cloudinary.com/dlexfctt4/image/upload/v1755788620/WhatsApp_Image_2025-08-21_at_15.27.09_kwahlz.jpg" 
+    {
+      title: "Carrom-Board",
+      description:
+        "Carrom-board promotes strategic thinking and precision, encouraging friendly competition among students.",
+      imageUrl:
+        "https://res.cloudinary.com/dlexfctt4/image/upload/v1755788620/WhatsApp_Image_2025-08-21_at_15.27.09_kwahlz.jpg",
     },
-    { 
-      title: "Badminton", 
-      description: "Our badminton team regularly competes in district-level tournaments, promoting agility and competitive spirit.", 
-      imageUrl: "https://res.cloudinary.com/dlexfctt4/image/upload/v1755786355/WhatsApp_Image_2025-08-20_at_19.27.56_d4umiq.jpg" 
+    {
+      title: "Badminton",
+      description:
+        "Our badminton team regularly competes in district-level tournaments, promoting agility and competitive spirit.",
+      imageUrl:
+        "https://res.cloudinary.com/dlexfctt4/image/upload/v1755786355/WhatsApp_Image_2025-08-20_at_19.27.56_d4umiq.jpg",
     },
-    { 
-      title: "Yoga Sessions", 
-      description: "Weekly yoga sessions are held to promote mental clarity, flexibility, and overall well-being in students.", 
-      imageUrl: "https://res.cloudinary.com/dlexfctt4/image/upload/v1755786354/WhatsApp_Image_2025-08-20_at_19.27.53_wxgaif.jpg" 
+    {
+      title: "Yoga Sessions",
+      description:
+        "Weekly yoga sessions are held to promote mental clarity, flexibility, and overall well-being in students.",
+      imageUrl:
+        "https://res.cloudinary.com/dlexfctt4/image/upload/v1755786354/WhatsApp_Image_2025-08-20_at_19.27.53_wxgaif.jpg",
     },
-    { 
-      title: "Yoga Practice", 
-      description: "Our students practice various yoga poses to enhance concentration and physical health.", 
-      imageUrl: "https://res.cloudinary.com/dlexfctt4/image/upload/v1755786354/WhatsApp_Image_2025-08-20_at_19.21.44_uibww2.jpg" 
-    },
-     { 
-      title: "Yoga at School", 
-      description: "A large group of students participating in a morning yoga session at our school.", 
-      imageUrl: "https://res.cloudinary.com/dlexfctt4/image/upload/v1755786352/WhatsApp_Image_2025-08-20_at_19.21.40_frnxer.jpg"
+    {
+      title: "Yoga Practice",
+      description:
+        "Our students practice various yoga poses to enhance concentration and physical health.",
+      imageUrl:
+        "https://res.cloudinary.com/dlexfctt4/image/upload/v1755786354/WhatsApp_Image_2025-08-20_at_19.21.44_uibww2.jpg",
     },
   ];
 
   const culturalActivities = [
-    { 
-      title: "Convocation", 
-      description: "Our convocation ceremony celebrates the achievements and hard work of our graduating students.", 
-      imageUrl: "https://res.cloudinary.com/dlexfctt4/image/upload/v1755786355/WhatsApp_Image_2025-08-20_at_19.27.55_2_oz6sal.jpg" 
+    {
+      title: "Convocation",
+      description:
+        "Our convocation ceremony celebrates the achievements and hard work of our graduating students.",
+      imageUrl:
+        "https://res.cloudinary.com/dlexfctt4/image/upload/v1755786355/WhatsApp_Image_2025-08-20_at_19.27.55_2_oz6sal.jpg",
     },
-    { 
-      title: "Christmas Celebrations", 
-      description: "Students and staff come together to celebrate Christmas with festive songs, decorations, and performances.", 
-      imageUrl: "https://res.cloudinary.com/dlexfctt4/image/upload/v1755786354/WhatsApp_Image_2025-08-20_at_19.21.43_1_ktk7np.jpg" 
+    {
+      title: "Christmas Celebrations",
+      description:
+        "Students and staff come together to celebrate Christmas with festive songs, decorations, and performances.",
+      imageUrl:
+        "https://res.cloudinary.com/dlexfctt4/image/upload/v1755786354/WhatsApp_Image_2025-08-20_at_19.21.43_1_ktk7np.jpg",
     },
-    { 
-      title: "Science & Art Exhibition", 
-      description: "An event where students display their innovative projects and artistic creations to the community, fostering creativity and scientific thinking.", 
-      imageUrl: "https://res.cloudinary.com/dlexfctt4/image/upload/v1755786356/WhatsApp_Image_2025-08-20_at_19.27.58_ztb9tp.jpg" 
+    {
+      title: "Science & Art Exhibition",
+      description:
+        "An event where students display their innovative projects and artistic creations to the community, fostering creativity and scientific thinking.",
+      imageUrl:
+        "https://res.cloudinary.com/ddgfjerss/image/upload/v1756042905/WhatsApp_Image_2025-08-20_at_19.27.58_3_h3lseo.jpg",
     },
-    { 
-      title: "Krishna Janmashtami", 
-      description: "Students perform traditional dances and skits to celebrate Krishna Janmashtami, enriching their cultural knowledge.", 
-      imageUrl: "https://res.cloudinary.com/dlexfctt4/image/upload/v1755786352/WhatsApp_Image_2025-08-20_at_19.21.39_qk6yzj.jpg" 
+    {
+      title: "Krishna Janmashtami",
+      description:
+        "Students perform traditional dances and skits to celebrate Krishna Janmashtami, enriching their cultural knowledge.",
+      imageUrl:
+        "https://res.cloudinary.com/ddgfjerss/image/upload/v1756048637/cfe6e5c4-81d5-4931-8fcc-d486c064137f_roesqm.jpg",
+    },
+    {
+      title: "Sankranthi Celebrations",
+      description:
+        "Sankranthi is celebrated with traditional games, dances, and feasts, promoting cultural heritage among students.",
+      imageUrl:
+        "https://res.cloudinary.com/ddgfjerss/image/upload/v1756048635/0df3318f-c3f0-4e46-881b-147e7e2670a7_oqsihq.jpg",
     },
   ];
 
