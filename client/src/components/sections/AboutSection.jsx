@@ -11,7 +11,7 @@ const imageUrls = {
   campus: "https://res.cloudinary.com/ddgfjerss/image/upload/v1756037892/WhatsApp_Image_2025-08-24_at_16.58.05_k05gea.jpg",
   mission: "https://res.cloudinary.com/ddgfjerss/image/upload/v1756038879/adfaf_adzhkx.png",
   founder: "https://res.cloudinary.com/ddgfjerss/image/upload/v1756036643/newimh_mphrgd.png",
-  principal: "https://res.cloudinary.com/ddgfjerss/image/upload/v1756038493/pinci_egbkrl.png", // New URL for Principal
+  principal: "https://res.cloudinary.com/ddgfjerss/image/upload/v1756042764/hfhfh_kgjqrp.png", // New URL for Principal
   manager: "https://res.cloudinary.com/ddgfjerss/image/upload/v1756036766/ha_ycgxao.png",
   administrator: "https://res.cloudinary.com/ddgfjerss/image/upload/v1756036770/adminis_pevblf.png",
 };
