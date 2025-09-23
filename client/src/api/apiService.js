@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 const API_URL =
-  "https://newgeneration-production.up.railway.app/api/" ||
   "https://newgeneration-an1t.onrender.com/api/api/";
 
 // --- Helper Functions ---
@@ -370,5 +369,6 @@ export const deleteFieldTrip = async (tripId) => {
     throw error.response?.data || new Error("Failed to delete field trip");
   }
 };
+
 
 
