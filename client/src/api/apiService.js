@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = "https://newgeneration-an1t.onrender.com/api/api/";
+const API_URL = "https://newgeneration-an1t.onrender.com/api/";
 
 // --- Helper Functions ---
 
@@ -8,7 +8,7 @@ const API_URL = "https://newgeneration-an1t.onrender.com/api/api/";
 const getAuthToken = () => {
   const user = JSON.parse(localStorage.getItem("user"));
   return user ? user.token : null;
-};
+}
 
 // Creates a config object with the Authorization header for protected routes.
 const getAuthConfig = () => {
@@ -368,6 +368,7 @@ export const deleteFieldTrip = async (tripId) => {
     throw error.response?.data || new Error("Failed to delete field trip");
   }
 };
+
 
 
 
