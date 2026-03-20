@@ -103,3 +103,17 @@ backend/
   🚀 Building scalable web applications | 🤖 Exploring AI | ⚙️ Engineering systems
 </p>
 ---
+
+## 📜 Project Certification
+
+This project was formally recognized by **New Generation Educational Society** for successfully designing and developing the official school website.
+
+<p align="center">
+  <img src="https://res.cloudinary.com/ddgfjerss/image/upload/v1774007011/WhatsApp_Image_2026-03-20_at_17.11.14_k89mi6.jpg" 
+       alt="Project Certificate" 
+       width="600"/>
+</p>
+
+<p align="center">
+  🏆 Recognized for technical excellence, professionalism, and contribution to digital transformation.
+</p>
