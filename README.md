@@ -86,12 +86,20 @@ frontend/
 backend/
 
 ---
-### 👨‍💻 Manu Saviour
+<h2 align="center">👨‍💻 Manu Saviour</h2>
 
-<p>
-  <img src="https://img.shields.io/badge/Full%20Stack-Developer-blue" />
-  <img src="https://img.shields.io/badge/Machine%20Learning-AI-green" />
-  <img src="https://img.shields.io/badge/DevOps-Engineer-orange" />
-  <img src="https://img.shields.io/badge/Data%20Science-Analytics-purple" />
+<p align="center">
+  <b>Full Stack Developer • Machine Learning • DevOps • Data Science</b>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Full%20Stack-Developer-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Machine%20Learning-AI-green?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/DevOps-Engineer-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Data%20Science-Analytics-purple?style=for-the-badge" />
+</p>
+
+<p align="center">
+  🚀 Building scalable web applications | 🤖 Exploring AI | ⚙️ Engineering systems
 </p>
 ---
