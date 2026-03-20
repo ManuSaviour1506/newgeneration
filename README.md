@@ -10,6 +10,13 @@ A production-ready **full-stack MERN application** built for managing and displa
 🌐 Live: https://www.newgenerationeluru.com  
 
 ## 🚀 Overview
+<p align="center">
+  <img src="https://img.shields.io/badge/MERN-Stack-green?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Frontend-React-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Backend-Node.js-success?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Database-MongoDB-brightgreen?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Deployment-Vercel%20%7C%20Render-black?style=for-the-badge" />
+</p>
 
 This project is a **custom Content Management System (CMS)** that allows school administrators to manage website content such as news, staff, students, and media without technical knowledge.
 
@@ -77,3 +84,14 @@ Media Storage
 ## 📂 Folder Structure
 frontend/
 backend/
+
+---
+### 👨‍💻 Manu Saviour
+
+<p>
+  <img src="https://img.shields.io/badge/Full%20Stack-Developer-blue" />
+  <img src="https://img.shields.io/badge/Machine%20Learning-AI-green" />
+  <img src="https://img.shields.io/badge/DevOps-Engineer-orange" />
+  <img src="https://img.shields.io/badge/Data%20Science-Analytics-purple" />
+</p>
+---
